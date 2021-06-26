@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>参数优化</title>
+</head>
+
+<body>
+    <h1> 遗传算法-参数优化 </h1> <br>
+    <table width="30%"><td>
+    <div class="parameter-better">
+        <form id="form-sa" method="post"> <!-- 无需验证 -->
+        <fieldset>
+        <legend> 遗传算法参数设置 </legend>
+            <div class="select-list">
+                <ul>
+                	<li>
+            			<p> 选择模型: </p>
+                        <input type="radio" name="model" value="ann" checked="checked">ANN 
+                        <input type="radio" name="model" value="ensemble">Ensemble
+        			</li>
+
+                    <!--
+                    <li>
+                        <p style="width: 150px;">选择模型：</p>
+                        <select id="model" name="model" class="valid" aria-invalid="false">
+                            <option value="ann">ANN</option>
+                            <option value="ensemble">Ensemble</option>
+                        </select>
+                    </li>
+                        			
+                    <li>
+                        <p style="width: 150px;">种群数量：</p><input type="number" id="pop_size" name="pop_size" value={{pop_size}} min=1 class="valid" aria-invalid="false" required>
+                    </li>
+                    <li>
+                        <p style="width: 150px;">基因数量：</p><input type="number" id="chrome_len" name="chrome_len" value={{chrome_len}} min=1 class="valid" aria-invalid="false" required>
+                    </li>
+                    <li>
+                        <p style="width: 150px;">变异系数：</p><input type="number" id="pm" name="pm" value={{pm}} min="0.00" max="1.00" step="0.01" class="valid" aria-invalid="false" required>
+                    </li>
+                    <li>
+                        <p style="width: 150px;">交叉系数：</p><input type="number" id="pc" name="pc" value={{pc}} min="0.00" max="1.00" step="0.01" class="valid" aria-invalid="false" required>
+                    </li>
+                    -->
+                </ul>
+
+
+                <br><input type="submit" value= "参数获取" > &nbsp&nbsp
+                <a href ='/'>
+                    <input type="button" value= "返回主页"> <br>
+                </a>
+
+            </div>
+            <br>
+
+            <div><h3>
+                {% for message in get_flashed_messages() %}
+                    {{message}}
+                {% endfor %}
+           </h3></div>
+        </fieldset>
+        </form>
+    </div>
+    </td>
+    </table>
+
+    <hr>
+   
+    {% if show_result %}
+        <h3> 最大值为：{{ max_value }} </h3>
+        <h3>此时的变量为：
+        {% for i in range(param|length) %}
+            <h4>{{col[i+1]}}: {{ param[i] }}<br> </h4>
+        {% endfor %}
+
+    {% endif %}
+
+</body>
+</html>

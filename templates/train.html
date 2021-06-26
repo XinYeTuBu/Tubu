@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>模型训练</title>
+            <script type="text/javascript" src="https://assets.pyecharts.org/assets/echarts.min.js"></script>
+
+</head>
+<body>
+<h1> 模型训练 </h1>
+<div class="col-sm-12 search-collapse">
+	<form id="form-train" method='post'> <!-- 无需验证 -->
+		<div class="select-list">
+			<ul>
+    			<li>
+        			<p> 选择模型: </p>
+                    <input type="radio" name="model" value="ann" checked="checked">ANN 
+                    <input type="radio" name="model" value="ensemble">Ensemble
+    			</li>
+    			
+				<!--
+				<li>
+					<p style="width: 150px;">选择模型：</p>
+					<select id="model" name="model" class="valid" aria-invalid="false">
+						<option value="ann">ANN</option>
+						<option value="ensemble">Ensemble</option>
+					</select>
+				</li>
+				<li>
+					<p style="width: 150px;">训练批次大小：</p><input type="number" id="batchSize" name="batchSize" value={{batchSize}} min=1 class="valid" aria-invalid="false" required>
+				</li>
+				<li>
+					<p style="width: 150px;">最小训练集大小：</p><input type="number" id="minTrainSize" name="minTrainSize" value={{minTrainSize}} min=1 class="valid" aria-invalid="false" required>
+				</li>
+				<li>
+					<p style="width: 150px;">最大训练系数：</p><input type="number" id="trainCoff" name="trainCoff" value={{trainCoff}} min=1 class="valid" aria-invalid="false" required>
+				</li>
+				      
+				<li>
+					<p style="width: 150px;">数据日期范围 <nobr>
+					<div class="input-daterange input-group" style="width: 140px">
+						<input type="date" class="input-sm valid" id="startTime" name="dateStart" value={{dateStart}} placeholder="yyyy-MM-dd" style="width: 160px" aria-invalid="false" required>
+							<span class="input-group-addon"> &nbsp到&nbsp </span>
+						<input type="date" class="input-sm" id="endTime" name="dateEnd" value={{dateEnd}} placeholder="yyyy-MM-dd HH:mm" style="width: 160px" required>	   
+						</nobr>
+					</div>
+				</li>
+				-->
+			</ul>
+
+			<br><input type="submit" value= "开始训练" onclick="valid()"> &nbsp&nbsp
+			<a href ='/'>
+    			<input type="button" value= "返回主页"> <br>
+    		</a>
+           
+		</div>
+		<br><hr>
+		
+		<!--
+		<div><h3> 
+       		{% for message in get_flashed_messages() %}
+          		{{message}}
+          	{% endfor %}	
+       </h3></div><br>
+		-->
+		
+	</form>
+</div>
+</body>
+</html>
